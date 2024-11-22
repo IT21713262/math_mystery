@@ -52,17 +52,17 @@ if (!isset($_SESSION["userName"])) {
 
         //setting green to correct answer
         function correctAns(ans) {
-            ans.css('background-color', '#00E142')
+            ans.css('background', 'linear-gradient(-180deg,#00E142,#00E142)')
             setTimeout(() => {
-                ans.css('background-color', 'rgb(39, 39, 39)')
-            }, 1000);
+                ans.css('background', 'linear-gradient(-180deg, #F9D55B, #EB8451)')
+            }, 500);
         }
         //setting red to wrong answer
         function wrongAns(ans) {
-            ans.css('background-color', 'rgb(255, 43, 43)')
+            ans.css('background', 'linear-gradient(-180deg,rgb(255, 43, 43),rgb(255, 43, 43)')
             setTimeout(() => {
-                ans.css('background-color', 'rgb(39, 39, 39)')
-            }, 1000);
+                ans.css('background', 'linear-gradient(-180deg, #F9D55B, #EB8451)')
+            }, 500);
         }
         //updating lives
         function lives() {
@@ -132,7 +132,7 @@ if (!isset($_SESSION["userName"])) {
             };
 
 
-            console.log(dataSet)
+            //console.log(dataSet)
 
             $.ajax({
 

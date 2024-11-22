@@ -153,9 +153,9 @@ if (!isset($_SESSION["userName"])) {
         function signOut() {
             window.location.href = '../../server/signOut.php';
         }
-        function play() {
-            window.location.href = '../../server/signOut.php';
-        }
+        // function play() {
+        //     window.location.href = '../../server/signOut.php';
+        // }
 
         $(document).ready(function () {
             $('.play').click(function () {
