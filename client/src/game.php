@@ -33,7 +33,7 @@ if (!isset($_SESSION["userName"])) {
             // document.getElementById("question-number").textContent = numQuestions;
             document.getElementById("score").textContent = score;
             document.getElementById("timer").textContent = timeLeft;
-            //document.getElementById("level-no").textContent = currentLevel;
+            document.getElementById("level").textContent = currentLevel;
         }
 
         function fetchImage() {
@@ -97,7 +97,8 @@ if (!isset($_SESSION["userName"])) {
                 $("#timer").text(timeLeft);
 
                 if (timeLeft <= 10) {
-                    $('.timeTag').addClass('active');
+                    $('.timeIn').addClass('active');
+                    $('.timeImg').addClass('active');
                     document.getElementById("clock").play();
                 }
 
@@ -105,7 +106,8 @@ if (!isset($_SESSION["userName"])) {
 
                 if (timeLeft < 0) {
                     clearInterval(timerInterval);
-                    $('.timeTag').removeClass('active');
+                    $('.timeIn').removeClass('active');
+                    $('.timeImg').removeClass('active');
                     livesLeft -= 1;
                     lives();
                     document.getElementById("wrong").play();
@@ -124,7 +126,8 @@ if (!isset($_SESSION["userName"])) {
 
 
 
-        //High Score Calculator
+        //High Score Calculator------------------------------
+
         function highScore(score) {
             var dataSet = {
                 score: score,
@@ -154,6 +157,21 @@ if (!isset($_SESSION["userName"])) {
         }
 
 
+        //level system--------------------------------------
+
+        function level(){
+            //var pass = 10;
+            numQuestions += 1;
+
+            if(numQuestions % 10 === 0){
+                currentLevel += 1;
+                console.log('level 2')
+            }
+            console.log('NOQ' + numQuestions)
+            updateUI();
+        }
+
+
 
         document.addEventListener("DOMContentLoaded", function () {
             updateUI();
@@ -179,11 +197,12 @@ if (!isset($_SESSION["userName"])) {
                     //document.getElementById("note").innerHTML = 'Correct';
                     score += 10;
                     highScore(score)
-                    numQuestions += 1;
                     fetchImage();
                     updateUI();
+                    level();
                     countDown();
-                    $('.timeTag').removeClass('active');
+                    $('.timeIn').removeClass('active');
+                    $('.timeImg').removeClass('active');
                     document.getElementById("clock").pause();
                 }
                 else {
@@ -239,6 +258,9 @@ if (!isset($_SESSION["userName"])) {
         <div class="score">
             <p>Score <span id="score">10</span></p>
         </div>
+        <div class="level">
+            <p>Level <span id="level">0</span></p>
+        </div>
         <a href="./menu.php">
             <div class="home controlBtn">
                 <i class="fas fa-home"></i>
@@ -248,7 +270,7 @@ if (!isset($_SESSION["userName"])) {
             <i class='fas fa-volume-mute'></i>
         </div>
         <div class="time">
-            <img src="../assets/stopwatch.png" alt="">
+            <img src="../assets/stopwatch.png" class="timeImg" alt="">
             <div class="timeIn">
                 <p><span id="timer">10</span>s</p>
             </div>

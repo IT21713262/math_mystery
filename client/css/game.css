@@ -124,7 +124,23 @@ body {
     cursor: pointer;
     transition: 0.3s;
 }
+.level{
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
 
+    background: linear-gradient(-180deg, #F9D55B, #EB8451);
+    box-shadow: 0 4px 4px #BFBCBC;
+    border: 3px solid white;
+    border-radius: 50px;
+    color: #fff;
+    padding: 10px 35px;
+    margin-top: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
 .controlBtn {
     position: absolute;
     right: 40px;
@@ -154,7 +170,7 @@ body {
     right: 90px;
 }
 
-.music {}
+
 
 .time {
     position: absolute;
@@ -181,9 +197,27 @@ body {
     width: 80px;
     text-align: right;
     z-index: 2;
-    color: rgb(255, 255, 255);
+    color: rgb(27, 27, 27);
+}
+.time .timeIn.active{
+    animation: timer 0.8s ease infinite;
 }
 
+@keyframes timer {
+    0%{ background-color: #FBB040;}
+    50%{  background-color: rgb(255, 92, 92);}
+    100%{ background-color: #FBB040;}
+}
+
+.timeImg.active{
+    animation: timeImg 1s ease infinite;
+}
+
+@keyframes timeImg {
+    0%{ width: 70px;}
+    50%{  width: 80px;}
+    100%{ width: 70px;}
+}
 .question {
     position: absolute;
     left: 50%;
