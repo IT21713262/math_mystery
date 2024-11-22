@@ -58,7 +58,7 @@ if (!isset($_SESSION["userName"])) {
             }, 500);
         }
         //setting red to wrong answer
-        function wrongAns(ans) {
+        function wrongAns(ans) { 
             ans.css('background', 'linear-gradient(-180deg,rgb(255, 43, 43),rgb(255, 43, 43)')
             setTimeout(() => {
                 ans.css('background', 'linear-gradient(-180deg, #F9D55B, #EB8451)')
