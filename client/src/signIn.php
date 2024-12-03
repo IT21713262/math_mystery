@@ -57,7 +57,7 @@
                 </div>
                 <div class="text_fields">
                     <span>CONFIRM PASSWORD</span>
-                    <input type="password" placeholder="Enter Confirm Password" class="text-area rconpass" id="rpswd_part">
+                    <input type="password" placeholder="Enter Confirm Password" class="text-area rconpass" id="rpswd_part_con">
                 </div>
                 <div class="error" id="rerror">
                        
@@ -197,7 +197,7 @@
                             pass: pass,
                         };
 
-                        //console.log(dataSet)
+                        console.log(dataSet)
 
                         $.ajax({
 
