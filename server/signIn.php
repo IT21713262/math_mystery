@@ -9,6 +9,8 @@ $pass = $_POST['pass'];
 $sql = "SELECT `password` FROM `users` WHERE `userName`=?";
 $stmt = mysqli_prepare($con, $sql);
 
+//references took from chatgpt-------------------------------------------
+
 if ($stmt) {
     mysqli_stmt_bind_param($stmt, "s", $userName);
     mysqli_stmt_execute($stmt);

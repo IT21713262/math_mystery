@@ -157,6 +157,9 @@ if (!isset($_SESSION["userName"])) {
         //     window.location.href = '../../server/signOut.php';
         // }
 
+
+
+        //references took from chatgpt-------------------------------------------
         $(document).ready(function () {
             $('.play').click(function () {
                 $('.levelOut').css('display', 'flex');
